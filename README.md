@@ -1,6 +1,9 @@
-### Showroom API
+# Showroom API
 
-## Endpoints
+### Diagrams : [./diagrams/](https://github.com/joesinghh/Showroom-API/tree/main/diagrams)
+
+### Docker Repo : [Docker Image](https://hub.docker.com/repository/docker/joesin7h/showroom-api)
+### Endpoints
 
 1. __register/__
 
