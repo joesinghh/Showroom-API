@@ -7,8 +7,6 @@ from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth.models import User
 from .models import Bikes, Order
 
-
-
 class UserSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
@@ -51,4 +49,8 @@ class BikeSerializer(serializers.ModelSerializer):
     model = Bikes
     fields = '__all__'
 
-    
+class OrderSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Order
+    fields = '__all__'
+
