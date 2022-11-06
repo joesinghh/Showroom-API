@@ -1,50 +1,61 @@
 ### Showroom API
 
-Endpoints
+## Endpoints
 
-1. Register
+1. __register/__
 
-POST 
+`POST ` 
+ Request body :
+```json
 
 {
-    "username": "",
-    "password": "",
-    "password2": "",
-    "email": "",
+    "username": "demo",
+    "password": "demo123*lol",
+    "password2": "demo123*lol",
+    "email": "demo@gmail.com",
     "is_staff": false
 }
+```
+Response :
 
-HTTP 201 Created
-Content-Type: application/json
 
+```json
 {
-    "username": "joesingh",
-    "email": "josingh48112@gmail.com",
+    "username": "demo",
+    "email": "demo@gmail.com",
     "is_staff": false
 }
+```
 
-2. Authentication / login
-
+2. __api-token-auth/__
+`POST`
+REquest:
+```json
 {
-    "username":"joesingh",
-    "password":"joe123*lol"
+    "username":"demo",
+    "password":"demo123*lol"
     
 }
-
+```
+Response
+```json
 {
     "token": "37ab404fcd602942f35546112ac45131597e7b14"
 }
+```
 
-3. Profile/ user data
+3. __profile/__
 
-GET 
-header : Authorization : TOKEN <your token>
-
+`GET` 
+`header : Authorization : TOKEN <your token>`
+Response:
+```json
 {
     "id": 4,
     "username": "joesingh",
     "is_staff": false
 }
+```
 
 4. Bike data
 no auth required
