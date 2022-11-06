@@ -28,6 +28,7 @@ Response :
 ```
 
 2. __api-token-auth/__
+
 `POST`
 REquest:
 ```json
@@ -57,10 +58,13 @@ Response:
 }
 ```
 
-4. Bike data
+4. __bike/__
+
 no auth required
 
-GET
+`GET`
+Response:
+```json
 
 [
     {
@@ -80,44 +84,56 @@ GET
         "category": 1
     }
 ]
+```
 
-5. ADD bikes
-POST
+5. __addbike/__
 
+`POST`
+Only staff members can call this endpoint
+Request:
+```json
 {
-        "id": 1,
+
         "modelnumber": "123",
         "price": 123,
         "warranty": "1.00",
         "color": "red",
         "category": 1
-    }
+ }
 
-6. PUT, DELETE modbike
+ ```
 
+6. __bike/<id>/__
+ 
+`PUT`
+```json
 {
-        "id": 2,
         "modelnumber": "1234",
         "price": 123,
         "warranty": "1.00",
         "color": "red",
         "category": 1
     }
+```
+`DELETE`
 
-DELETE
 
-
-7. ORDER 
-POST
-
+7. __order/__
+ 
+`POST`
+Request
+ ```json
 {
-    "id": 2,
+    
     "date": "2022-11-06T06:22:28.552038Z",
     "user": 2,
     "bike": 1
 }
+ ```
 
-GET
+`GET`
+ Response
+ ```json
 [
     {
         "id": 1,
@@ -132,8 +148,12 @@ GET
         "bike": 1
     }
 ]
-
-6. Order details
+```
+6. __order/<id>__
+ 
+`GET`
+ Response
+ ```json
 {
     "id": 1,
     "date": "2022-11-06T06:20:53.069284Z",
@@ -141,3 +161,4 @@ GET
     "bike": 1,
     "Warranty Status": "0 days left"
 }
+```
